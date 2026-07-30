@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/works.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+  <header class="main-header model-flex">
+    <img class="nav-bg" src="image/top_lace.png" alt="背景">
+    <img class="title" src="image/PORTFOLIO.png" alt="タイトル">
+    <nav class="gnav">
+      <ul class="model-flex">
+        <li><a href="index.html"> <img class="nav-img1" src="image/top.png" alt="トップ"></a></li>
+        <li><a href="about.html"> <img class="nav-img2" src="image/About.png" alt="自分"></a></li>
+        <li><a href="works.html"> <img class="nav-img3" src="image/Works.png" alt="作品"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="relative">
+      <img class="Works" src="image/Works.png" alt="タイトル">
+      <img class="window1" src="image/Window.png" alt="ウィンドウ1">
+
+      <div class="window-text1">イラスト</div>
+      <p class="text1">
+        女の子やぬいぐるみなど可愛いものをメインに、<br>
+        少しダークな世界観で描くのが好きです。</p>
+      <div class="window-text2">使用ツール</div>
+      <p class="text2">
+        ・CLIPSTUDIO<br>
+        ・Photoshop</p>
+
+      <style>
+        /* ギャラリー配置 */
+        .gallery {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        .thumb {
+          width: 180px;
+          cursor: pointer;
+          border-radius: 6px;
+          transition: opacity .2s;
+        }
+
+        .thumb:hover {
+          opacity: 0.8;
+        }
+
+        /* モーダル背景 */
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity .3s ease;
+          z-index: 9999;
+        }
+
+        .modal.show {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        /* 拡大画像 */
+        .modal img {
+          max-width: 90%;
+          max-height: 90%;
+          border-radius: 10px;
+          transform: scale(0.6);
+          transition: transform .3s ease;
+        }
+
+        .modal.show img {
+          transform: scale(1);
+        }
+      </style>
+
+      <div class="gallery">
+        <img src="image/aruna1.png" class="thumb">
+        <img src="image/kesson.png" class="thumb">
+        <img src="image/kurumi.png" class="thumb">
+        <img src="image/mia.png" class="thumb">
+        <img src="image/mia3.png" class="thumb">
+        <img src="image/oru.png" class="thumb">
+        <img src="image/mia1.png" class="thumb">
+        <img src="image/stera1.png" class="thumb">
+        <img src="image/About-img.png" class="thumb">
+        <img src="image/inu.png" class="thumb">
+        <img src="image/kuma.png" class="thumb">
+        <img src="image/neko.png" class="thumb">
+        <img src="image/nezumi.png" class="thumb">
+        <img src="image/ookami.png" class="thumb">
+        <img src="image/usagi.png" class="thumb">
+        <img src="image/panda.png" class="thumb">
+      </div>
+
+      <div class="modal" id="modal">
+        <img id="modalImg">
+      </div>
+
+      <script>
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        const thumbs = document.querySelectorAll('.thumb');
+
+        thumbs.forEach(img => {
+          img.onclick = () => {
+            modalImg.src = img.src;   // クリックした画像を表示
+            modal.classList.add('show');
+          };
+        });
+
+        modal.onclick = () => {
+          modal.classList.remove('show');
+        };
+      </script>
+
+
+    </div>
+
+    <div class="relative">
+      <img class="window1" src="image/Window.png" alt="ウィンドウ1">
+
+      <div class="window-text3">バナー</div>
+      <p class="text3">
+        自分で描いたイラストを広告などにするイメージで、<br>
+        様々なアセットを使用しながら作成しました。</p>
+      <div class="window-text4">使用ツール</div>
+      <p class="text4">
+        ・Photoshop<br>
+        ・illustrator</p>
+
+      <style>
+        .thumb1 {
+          width: 180px;
+          cursor: pointer;
+          border-radius: 6px;
+          transition: opacity .2s;
+        }
+
+        .thumb1:hover {
+          opacity: 0.8;
+        }
+
+        /* モーダル背景 */
+        .modal1 {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity .3s ease;
+          z-index: 9999;
+        }
+
+        .modal1.show {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        /* 拡大画像 */
+        .modal1 img {
+          max-width: 90%;
+          max-height: 90%;
+          border-radius: 10px;
+          transform: scale(0.6);
+          transition: transform .3s ease;
+        }
+
+        .modal1.show img {
+          transform: scale(1);
+        }
+      </style>
+
+      <div class="gallery">
+        <img src="image/nocturne.png" class="thumb">
+        <img src="image/aruna.png" class="thumb">
+        <img src="image/gra.png" class="thumb">
+        <img src="image/stera.png" class="thumb">
+       
+
+      <div class="modal1" id="modal1">
+        <img id="modalImg1">
+      </div>
+
+      <script>
+        const modal1 = document.getElementById('modal1');
+        const modalImg1 = document.getElementById('modalImg1');
+        const thumbs1 = document.querySelectorAll('.thumb');
+
+        thumbs1.forEach(img => {
+          img.onclick = () => {
+            modalImg1.src = img.src;   // クリックした画像を表示
+            modal1.classList.add('show');
+          };
+        });
+
+        modal1.onclick = () => {
+          modal1.classList.remove('show');
+        };
+      </script>
+
+
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>
